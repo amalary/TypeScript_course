@@ -1,23 +1,19 @@
-function add(n1:number, n2:number, showResult:boolean, phrase:string){
-    // console.log(typeof(number1))
-
-    const result = n1 + n2;
-
-    if (showResult){
-        console.log(phrase + result);
-    }else{
-
-        return n1 + n2;
-    }
-
+// const person: {
+//     name: string;
+//     age: number;
+// } = {
+   const person ={ 
+    name: 'Maximilian',
+    age:30,
+    hobbies: ['Sports', 'Cooking']
 };
 
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true;
-const resultPhrase = 'Result is: '
+let favoriteActivities:string[]; 
+favoriteActivities = ['Sports'];
 
-add(number1,number2, printResult, resultPhrase); 
+console.log(person.name,person.age)
 
-
-
+for(const hobby of person.hobbies){
+    console.log(hobby.toUpperCase())
+    //console.log(hobby.map()) This is an error the map method only works on arrays
+}
