@@ -1,19 +1,30 @@
-// const person: {
-//     name: string;
-//     age: number;
-// } = {
-   const person ={ 
-    name: 'Maximilian',
-    age:30,
-    hobbies: ['Sports', 'Cooking']
-};
+function combine(input1:number | string, input2:number | string, resultConversion: 'as-number' | 'as-text'){
 
-let favoriteActivities:string[]; 
-favoriteActivities = ['Sports'];
+    let result;
 
-console.log(person.name,person.age)
+    if(typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === "as-number"){
+        result = +input1 + +input2;
+        
+    }else{
+        result = input1.toString() + input2.toString(); 
+    }
+    return result; 
+    // if(resultConversion === 'as-number'){
 
-for(const hobby of person.hobbies){
-    console.log(hobby.toUpperCase())
-    //console.log(hobby.map()) This is an error the map method only works on arrays
+    //     return +result
+    // }else{
+    //     return result.toString()
+    // }
 }
+
+const combinedAges = combine(30,26, "as-number"); 
+
+console.log(combinedAges); 
+
+const combinedStringAges = combine('30','26', "as-number"); 
+
+console.log(combinedStringAges); 
+
+const combineNames = combine("Max", "Anna","as-text")
+
+console.log(combineNames) 
