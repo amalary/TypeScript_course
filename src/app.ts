@@ -1,12 +1,5 @@
-const button = document.querySelector("button")!;
+const userName = "Maximilian"; 
 
+// userName = 3
 
-function clickedHandler(message:string){
-    console.log("You clicked" + message)
-}
-
-if(button){
-    
-    button.addEventListener("click", clickedHandler.bind(null,'Hello Mate'));
-
-}
+console.log(userName);

@@ -26,3 +26,7 @@ console.log(combineValues(8,8));
 addAndHandle(12,18,(result)=>{
     console.log(result)
 })
+
+
+
+
