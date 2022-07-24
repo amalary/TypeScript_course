@@ -1,36 +1,41 @@
-const userName = "Anthony";
+class Department {
 
-// userName = Max;
+    public name:string;
+    balance:number;
+    private employees: string[] = [];
 
-let age  = 30;
+    constructor(n:string,b:number){
+        this.name = n;
+        this.balance = b;
+    }
+    currentBalance(this:Department){
+        console.log("Your current balance is " + this.balance)
+    }
 
-age = 29; 
+    addEmployee(employee:string){
+        this.employees.push(employee) 
+    }
 
-// function added(a:number, b:number){
-    
-//     let result;
-//     result=  a+b;
-//     return result;
-// };
+    printEmployeeInfo(){
+        console.log(this.employees.length);
+        console.log(this.employees)
+    }
+};
 
-// if(age > 20){
-//     let isOld = true; 
-// };
+const accounting = new Department("Accounting",300)
 
-// console.log(isOld);
+console.log(accounting)
+accounting.addEmployee("Adrian");
+accounting.addEmployee("Anthony");
+// accounting.employees[2] = "Ashley"
 
-const added=(a:number, b:number) => {
-    return a+ b
-}
+accounting.currentBalance();
+accounting.printEmployeeInfo()
 
-console.log(added(2,5))
 
-const printOutput =(output: number | string)=> console.log(output);
 
-const button = document.querySelector("button");
 
-if(button){
-    button.addEventListener("click", event=> console.log(event))
-}
+// const accountingCopy = {name:"Anthony", balance:accounting.currentBalance}
 
-printOutput(34); 
+// accountingCopy.balance;
+
