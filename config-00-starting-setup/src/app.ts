@@ -1,10 +1,11 @@
 class Department {
     // private id: string;
     // private name:string;
+    protected employees: string[] = [];
 
-    private employees: string[] = [];
 
-    constructor(private id:string,public name:string){
+
+    constructor(private readonly id:string,public name:string){
         // this.id;
         // this.name = name;
     }
@@ -16,6 +17,7 @@ class Department {
     }
 
     addEmployee(employee:string){
+        // this.id = "D2"
         this.employees.push(employee) 
     }
 
@@ -25,17 +27,63 @@ class Department {
     }
 };
 
-const accounting = new Department("R2D2","Accounting")
+class ITDepartment extends Department {
 
-console.log(accounting)
-accounting.addEmployee("Adrian");
-accounting.addEmployee("Anthony");
-// accounting.employees[2] = "Ashley"
+    
+    admins: string[];
+    constructor(id:string,admins:string[]){
+        super(id, "IT");
+        this.admins =admins
+    }
+
+};
+
+class AccountingDepartment extends Department {
+    constructor(id:string, private reports:string[]){
+        super(id, 'Accounting');
+    }
+    addEmployee(employee: string) {
+
+        if(employee === "Anthony"){
+            return;
+        }
+        this.employees.push(employee); 
+
+        
+    }
+    addReport(text:string){
+        this.reports.push(text);
+    }
+
+    printReports(){
+        console.log(this.reports)
+    }
+}
 
 
-accounting.printEmployeeInfo()
 
-accounting.describe()
+const it = new ITDepartment("R2D2",['Anthony'])
+
+const account = new AccountingDepartment("1234", [])
+
+console.log(it)
+account.addReport("There seems to have been a miscalculation");
+
+account.addEmployee('Anthony');
+account.addEmployee('Brian');
+account.printEmployeeInfo()
+
+console.log(account)
+it.addEmployee("Adrian");
+it.addEmployee("Anthony");
+// it.employees[2] = "Ashley"
+
+
+it.printEmployeeInfo()
+
+it.describe()
+
+console.log(it)
 
 
 
