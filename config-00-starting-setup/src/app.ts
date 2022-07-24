@@ -1,15 +1,18 @@
 class Department {
+    // private id: string;
+    // private name:string;
 
-    public name:string;
-    balance:number;
     private employees: string[] = [];
 
-    constructor(n:string,b:number){
-        this.name = n;
-        this.balance = b;
+    constructor(private id:string,public name:string){
+        // this.id;
+        // this.name = name;
     }
-    currentBalance(this:Department){
-        console.log("Your current balance is " + this.balance)
+
+    describe(this: Department){
+
+        console.log(`Department (${this.id}): ${this.name}`)
+
     }
 
     addEmployee(employee:string){
@@ -22,15 +25,17 @@ class Department {
     }
 };
 
-const accounting = new Department("Accounting",300)
+const accounting = new Department("R2D2","Accounting")
 
 console.log(accounting)
 accounting.addEmployee("Adrian");
 accounting.addEmployee("Anthony");
 // accounting.employees[2] = "Ashley"
 
-accounting.currentBalance();
+
 accounting.printEmployeeInfo()
+
+accounting.describe()
 
 
 
