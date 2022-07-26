@@ -105,7 +105,8 @@
     "analytics.ts",
     "configs.ts",
     "NextGenType.ts",
-    "classes.ts"
+    "classes.ts",
+    "P&P.ts"
   ]
 //   "include": [
 
