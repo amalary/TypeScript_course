@@ -103,4 +103,10 @@ function moveAnimal(animal:Animal){
     console.log('Moving at the speed of:' + speed )
 }
 
-moveAnimal({type:"bird",flyingSpeed:100})
+moveAnimal({type:"bird",flyingSpeed:100});
+
+const userInputElement = <HTMLInputElement>document.getElementById("user-input")!;
+
+// :! elements to the left of the exclamation point will never yeild null 
+
+userInputElement.value = "Hello Everyone";
