@@ -35,7 +35,15 @@ function add(a: Combinable, b: Combinable){
 
 const result = add('Max', "Keeble")
 
-result.split('')
+result.split('');
+
+const fectedUserData = {
+    id: "u1",
+    name:'Anthony',
+    job: {title: "CEO", description: "My own company"}
+};
+
+console.log(fectedUserData?.job?.title);
 
 
 
