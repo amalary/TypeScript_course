@@ -106,7 +106,8 @@
     "configs.ts",
     "NextGenType.ts",
     "classes.ts",
-    "P&P.ts"
+    "P&P.ts",
+    "AdvancedTypes.ts"
   ]
 //   "include": [
 
