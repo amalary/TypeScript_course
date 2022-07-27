@@ -37,3 +37,23 @@ p.then((message)=> {
 }).catch((message) =>{
     console.log("This is in the catch and it is a " + message)
 });
+
+interface Lengthy {
+    length:number;
+}
+
+function countAndDescribe <T extends Lengthy>(element: T): [T,string]{
+
+    let description = 'I have no value';
+
+    if(element.length === 1){
+        description = "I have one element";
+    }
+    else if(element.length > 1){
+        description = " Got " + element.length + " elements ";
+    }
+    return [element,description]
+
+}
+
+console.log(countAndDescribe("how has your day gone"))
