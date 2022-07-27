@@ -110,3 +110,14 @@ const userInputElement = <HTMLInputElement>document.getElementById("user-input")
 // :! elements to the left of the exclamation point will never yeild null 
 
 userInputElement.value = "Hello Everyone";
+
+interface ErrorContainer { //email:"Not a valid email  username: Must start with a capital letter"
+
+    [prop:string]:string
+}
+
+const errorBag: ErrorContainer = {
+
+    email:"Not a valid email",
+    userName: "Must start with a capital letter",
+}
