@@ -45,6 +45,11 @@ const fectedUserData = {
 
 console.log(fectedUserData?.job?.title);
 
+const userInput = null;
+
+const storedData = userInput ?? "Default";
+
+console.log(storedData);
 
 
 // type UnknownEmployee = Employee | Admin;
