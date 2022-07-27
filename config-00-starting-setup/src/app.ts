@@ -11,11 +11,11 @@ promise.then(data => {
     console.log(data)
 })
 
-function merge<T,U>(objA:T, objB:U){
+function merge<T extends Object,U extends Object>(objA:T, objB:U){
     return Object.assign(objA,objB)
 };
 
-const newMerge = merge({name:"Anthony"}, {age:20})
+const newMerge = merge<{name:string}, {age:number}>({name:"Anthony"}, {age:20})
 
 console.log(newMerge.age)
 
